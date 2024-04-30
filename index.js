@@ -25,12 +25,9 @@ const upload = multer({ storage: storage });
 app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => 
 {  
   // Handle the uploaded file
-
-  //console.log(req.file, req.body)
-  //{"name":"testAppConsole.runtimeconfig.json","type":"application/json","size":268}
-  //console.log("fn " + fileName + " " + "fs " + fileSize );
+  //{"name":"testAppConsole.runtimeconfig.json","type":"application/json","size":268}  
   let result = { name:req.file.originalname,type:req.file.mimetype,size:req.file.size };
-  console(result);
+  console.log(result);
   res.json(result);
 });
 
