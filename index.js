@@ -29,7 +29,9 @@ app.post('/api/fileanalyse', upload.single('upfile'), (req, res) =>
   //console.log(req.file, req.body)
   //{"name":"testAppConsole.runtimeconfig.json","type":"application/json","size":268}
   //console.log("fn " + fileName + " " + "fs " + fileSize );
-  res.json({ name:req.file.originalname,type:req.file.mimetype,size:req.file.size });
+  let result = { name:req.file.originalname,type:req.file.mimetype,size:req.file.size };
+  console(result);
+  res.json(result);
 });
 
 app.use(cors());
